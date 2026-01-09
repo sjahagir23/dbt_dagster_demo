@@ -1,0 +1,29 @@
+2026-01-07 04:44:19 +0000 - dagster - DEBUG - banking_pipeline - b037cca1-3458-42ce-aa9e-e3e7112d67eb - 1820 - LOGS_CAPTURED - Started capturing logs in process (pid: 1820).
+2026-01-07 04:44:19 +0000 - dagster - DEBUG - banking_pipeline - b037cca1-3458-42ce-aa9e-e3e7112d67eb - 1820 - run_dbt_tests - STEP_START - Started execution of step "run_dbt_tests".
+2026-01-07 04:44:19 +0000 - dagster - INFO - banking_pipeline - b037cca1-3458-42ce-aa9e-e3e7112d67eb - run_dbt_tests - Running dbt tests...
+2026-01-07 04:44:24 +0000 - dagster - INFO - banking_pipeline - b037cca1-3458-42ce-aa9e-e3e7112d67eb - run_dbt_tests - [0m04:44:22  Running with dbt=1.10.18
+[0m04:44:22  Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /app/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+
+2026-01-07 04:44:24 +0000 - dagster - ERROR - banking_pipeline - b037cca1-3458-42ce-aa9e-e3e7112d67eb - run_dbt_tests
+2026-01-07 04:44:24 +0000 - dagster - ERROR - banking_pipeline - b037cca1-3458-42ce-aa9e-e3e7112d67eb - 1820 - run_dbt_tests - STEP_FAILURE - Execution of step "run_dbt_tests" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_dbt_tests"::
+
+Exception: dbt tests failed
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/app/dagster_pipeline.py", line 31, in run_dbt_tests
+    raise Exception("dbt tests failed")
+

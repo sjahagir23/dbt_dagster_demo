@@ -1,0 +1,55 @@
+STDOUT:
+ [0m22:11:08  Running with dbt=1.10.18
+[0m22:11:10  Registered adapter: databricks=1.11.0
+[0m22:11:11  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_pipeline.intermediate
+[0m22:11:11  Found 4 models, 2 seeds, 9 data tests, 2 sources, 711 macros, 3 unit tests
+[0m22:11:11  
+[0m22:11:11  Concurrency: 1 threads (target='dev')
+[0m22:11:11  
+[0m22:11:14  1 of 12 START test not_null_account_interest_summary_interest_rate ............. [RUN]
+[0m22:11:17  1 of 12 PASS not_null_account_interest_summary_interest_rate ................... [[32mPASS[0m in 2.29s]
+[0m22:11:17  2 of 12 START test not_null_account_interest_summary_new_balance ............... [RUN]
+[0m22:11:18  2 of 12 PASS not_null_account_interest_summary_new_balance ..................... [[32mPASS[0m in 1.41s]
+[0m22:11:18  3 of 12 START test not_null_stg_accounts_account_id ............................ [RUN]
+[0m22:11:20  3 of 12 PASS not_null_stg_accounts_account_id .................................. [[32mPASS[0m in 1.54s]
+[0m22:11:20  4 of 12 START test not_null_stg_accounts_balance ............................... [RUN]
+[0m22:11:21  4 of 12 PASS not_null_stg_accounts_balance ..................................... [[32mPASS[0m in 1.63s]
+[0m22:11:21  5 of 12 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m22:11:23  5 of 12 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 1.29s]
+[0m22:11:23  6 of 12 START test source_not_null_raw_accounts_AccountID ...................... [RUN]
+[0m22:11:24  6 of 12 PASS source_not_null_raw_accounts_AccountID ............................ [[32mPASS[0m in 1.25s]
+[0m22:11:24  7 of 12 START test source_not_null_raw_customers_CustomerID .................... [RUN]
+[0m22:11:25  7 of 12 PASS source_not_null_raw_customers_CustomerID .......................... [[32mPASS[0m in 1.25s]
+[0m22:11:25  8 of 12 START test unique_stg_accounts_account_id .............................. [RUN]
+[0m22:11:26  8 of 12 PASS unique_stg_accounts_account_id .................................... [[32mPASS[0m in 1.25s]
+[0m22:11:26  9 of 12 START test unique_stg_customers_customer_id ............................ [RUN]
+[0m22:11:28  9 of 12 PASS unique_stg_customers_customer_id .................................. [[32mPASS[0m in 1.17s]
+[0m22:11:28  10 of 12 START unit_test account_interest_summary::interest_rate_with_loan_mid_balance  [RUN]
+[0m22:11:30  10 of 12 PASS account_interest_summary::interest_rate_with_loan_mid_balance .... [[32mPASS[0m in 2.66s]
+[0m22:11:30  11 of 12 START unit_test account_interest_summary::interest_rate_without_loan_low_balance  [RUN]
+[0m22:11:33  11 of 12 PASS account_interest_summary::interest_rate_without_loan_low_balance . [[32mPASS[0m in 2.23s]
+[0m22:11:33  12 of 12 START unit_test account_interest_summary::non_savings_account_filtered_out  [RUN]
+[0m22:11:35  12 of 12 FAIL 1 account_interest_summary::non_savings_account_filtered_out ..... [[31mFAIL 1[0m in 2.61s]
+[0m22:11:35  
+[0m22:11:35  Finished running 9 data tests, 3 unit tests in 0 hours 0 minutes and 24.02 seconds (24.02s).
+[0m22:11:35  
+[0m22:11:35  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m22:11:35  
+[0m22:11:35  [31mFailure in unit_test non_savings_account_filtered_out (tests/unit/test_interest_calculation.yml)[0m
+[0m22:11:35    
+
+[32mactual[0m differs from [31mexpected[0m:
+
+[0;1m@@[0m [33m,[0m[0;1mcustomer_id[0m[33m,[0m[0;1maccount_id[0m[33m,[0m[0;1moriginal_balance[0m[33m,[0m[0;1minterest_rate[0m[33m,[0m[0;1mannual_interest_amount[0m[33m,[0m[0;1mnew_balance[0m
+[32;1m+++[0m[33m,[0m[32;1m203[0m        [33m,[0m[32;1mUT003[0m     [33m,[0m[32;1mDecimal('20000.00')[0m        [33m,[0m[32;1mDecimal('0.020')[0m        [33m,[0m[32;1mDecimal('400.00000')[0m             [33m,[0m[32;1mDecimal('20400.00000')[0m
+
+
+[0m22:11:35  
+[0m22:11:35    compiled code at target/compiled/banking_pipeline/tests/unit/test_interest_calculation.yml/tests/unit/non_savings_account_filtered_out.sql
+[0m22:11:35  
+[0m22:11:35  Done. PASS=11 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=12
+
+STDERR:
+ 

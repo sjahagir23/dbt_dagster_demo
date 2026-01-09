@@ -1,0 +1,93 @@
+2026-01-08 22:54:42 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 612 - LOGS_CAPTURED - Started capturing logs in process (pid: 612).
+2026-01-08 22:54:42 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 612 - dbt_test - STEP_START - Started execution of step "dbt_test".
+2026-01-08 22:55:45 +0000 - dagster - ERROR - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 612 - dbt_test - STEP_FAILURE - Execution of step "dbt_test" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_test"::
+
+RuntimeError: Command failed: dbt test --project-dir /opt/dagster/app/dbt --profiles-dir /opt/dagster/app/dbt --target dev
+STDOUT:
+[0m22:54:47  Running with dbt=1.10.18
+[0m22:54:56  Registered adapter: databricks=1.11.0
+[0m22:54:56  Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m22:55:00  USING CUSTOM SCHEMA MACRO
+[0m22:55:01  USING CUSTOM SCHEMA MACRO
+[0m22:55:01  USING CUSTOM SCHEMA MACRO
+[0m22:55:01  USING CUSTOM SCHEMA MACRO
+[0m22:55:01  USING CUSTOM SCHEMA MACRO
+[0m22:55:01  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:02  USING CUSTOM SCHEMA MACRO
+[0m22:55:03  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_pipeline.intermediate
+[0m22:55:03  Found 4 models, 2 seeds, 9 data tests, 2 sources, 711 macros, 3 unit tests
+[0m22:55:03  
+[0m22:55:03  Concurrency: 1 threads (target='dev')
+[0m22:55:03  
+[0m22:55:13  1 of 12 START test not_null_account_interest_summary_interest_rate ............. [RUN]
+[0m22:55:16  1 of 12 PASS not_null_account_interest_summary_interest_rate ................... [[32mPASS[0m in 2.90s]
+[0m22:55:16  2 of 12 START test not_null_account_interest_summary_new_balance ............... [RUN]
+[0m22:55:17  2 of 12 PASS not_null_account_interest_summary_new_balance ..................... [[32mPASS[0m in 1.45s]
+[0m22:55:17  3 of 12 START test not_null_stg_accounts_account_id ............................ [RUN]
+[0m22:55:21  3 of 12 PASS not_null_stg_accounts_account_id .................................. [[32mPASS[0m in 3.97s]
+[0m22:55:21  4 of 12 START test not_null_stg_accounts_balance ............................... [RUN]
+[0m22:55:23  4 of 12 PASS not_null_stg_accounts_balance ..................................... [[32mPASS[0m in 1.89s]
+[0m22:55:23  5 of 12 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m22:55:25  5 of 12 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 2.26s]
+[0m22:55:25  6 of 12 START test source_not_null_raw_accounts_AccountID ...................... [RUN]
+[0m22:55:27  6 of 12 PASS source_not_null_raw_accounts_AccountID ............................ [[32mPASS[0m in 1.76s]
+[0m22:55:27  7 of 12 START test source_not_null_raw_customers_CustomerID .................... [RUN]
+[0m22:55:29  7 of 12 PASS source_not_null_raw_customers_CustomerID .......................... [[32mPASS[0m in 2.19s]
+[0m22:55:29  8 of 12 START test unique_stg_accounts_account_id .............................. [RUN]
+[0m22:55:32  8 of 12 PASS unique_stg_accounts_account_id .................................... [[32mPASS[0m in 2.87s]
+[0m22:55:32  9 of 12 START test unique_stg_customers_customer_id ............................ [RUN]
+[0m22:55:35  9 of 12 PASS unique_stg_customers_customer_id .................................. [[32mPASS[0m in 2.95s]
+[0m22:55:35  10 of 12 START unit_test account_interest_summary::interest_rate_with_loan_mid_balance  [RUN]
+[0m22:55:38  10 of 12 PASS account_interest_summary::interest_rate_with_loan_mid_balance .... [[32mPASS[0m in 3.02s]
+[0m22:55:38  11 of 12 START unit_test account_interest_summary::interest_rate_without_loan_low_balance  [RUN]
+[0m22:55:41  11 of 12 PASS account_interest_summary::interest_rate_without_loan_low_balance . [[32mPASS[0m in 2.46s]
+[0m22:55:41  12 of 12 START unit_test account_interest_summary::non_savings_account_filtered_out  [RUN]
+[0m22:55:44  12 of 12 FAIL 1 account_interest_summary::non_savings_account_filtered_out ..... [[31mFAIL 1[0m in 2.83s]
+[0m22:55:44  
+[0m22:55:44  Finished running 9 data tests, 3 unit tests in 0 hours 0 minutes and 40.64 seconds (40.64s).
+[0m22:55:44  
+[0m22:55:44  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m22:55:44  
+[0m22:55:44  [31mFailure in unit_test non_savings_account_filtered_out (tests/unit/test_interest_calculation.yml)[0m
+[0m22:55:44    
+
+[32mactual[0m differs from [31mexpected[0m:
+
+[0;1m@@[0m [33m,[0m[0;1mcustomer_id[0m[33m,[0m[0;1maccount_id[0m[33m,[0m[0;1moriginal_balance[0m[33m,[0m[0;1minterest_rate[0m[33m,[0m[0;1mannual_interest_amount[0m[33m,[0m[0;1mnew_balance[0m
+[32;1m+++[0m[33m,[0m[32;1m203[0m        [33m,[0m[32;1mUT003[0m     [33m,[0m[32;1mDecimal('20000.00')[0m        [33m,[0m[32;1mDecimal('0.020')[0m        [33m,[0m[32;1mDecimal('400.00000')[0m             [33m,[0m[32;1mDecimal('20400.00000')[0m
+
+
+[0m22:55:44  
+[0m22:55:44    compiled code at target/compiled/banking_pipeline/tests/unit/test_interest_calculation.yml/tests/unit/non_savings_account_filtered_out.sql
+[0m22:55:44  
+[0m22:55:44  Done. PASS=11 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=12
+
+STDERR:
+
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/dagster_pipeline.py", line 60, in dbt_test
+    run_cmd(
+  File "/opt/dagster/app/dagster_pipeline.py", line 24, in run_cmd
+    raise RuntimeError(
+

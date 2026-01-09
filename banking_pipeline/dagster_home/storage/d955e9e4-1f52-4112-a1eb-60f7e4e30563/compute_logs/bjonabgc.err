@@ -1,0 +1,7 @@
+2026-01-07 04:36:47 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15230 - LOGS_CAPTURED - Started capturing logs in process (pid: 15230).
+2026-01-07 04:36:47 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15230 - load_to_databricks - STEP_START - Started execution of step "load_to_databricks".
+2026-01-07 04:36:48 +0000 - dagster - INFO - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - load_to_databricks - Databricks load handled by dbt-databricks materialization.
+2026-01-07 04:36:48 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15230 - load_to_databricks - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-01-07 04:36:48 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - load_to_databricks - Writing file at: /app/dagster_home/storage/d955e9e4-1f52-4112-a1eb-60f7e4e30563/load_to_databricks/result using PickledObjectFilesystemIOManager...
+2026-01-07 04:36:48 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15230 - load_to_databricks - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-01-07 04:36:48 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15230 - load_to_databricks - STEP_SUCCESS - Finished execution of step "load_to_databricks" in 743ms.

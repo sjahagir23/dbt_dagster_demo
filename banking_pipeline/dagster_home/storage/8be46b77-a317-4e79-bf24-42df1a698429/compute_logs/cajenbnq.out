@@ -1,0 +1,11 @@
+Exporting mart table account_interest_summary to CSV...
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Usage: dbt run-operation [OPTIONS] MACRO
+Try 'dbt run-operation -h' for help.
+
+Error: Invalid value for '--profiles-dir': Path './profiles' does not exist.
+

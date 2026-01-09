@@ -1,0 +1,22 @@
+2026-01-08 06:18:48 +0000 - dagster - DEBUG - banking_pipeline - e94b4511-b922-4fce-b935-6be8197d0a3a - 1234 - LOGS_CAPTURED - Started capturing logs in process (pid: 1234).
+2026-01-08 06:18:48 +0000 - dagster - DEBUG - banking_pipeline - e94b4511-b922-4fce-b935-6be8197d0a3a - 1234 - run_tests - STEP_START - Started execution of step "run_tests".
+2026-01-08 06:20:10 +0000 - dagster - ERROR - banking_pipeline - e94b4511-b922-4fce-b935-6be8197d0a3a - 1234 - run_tests - STEP_FAILURE - Execution of step "run_tests" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_tests"::
+
+Exception: Command failed: dbt test --profiles-dir /opt/dagster/app/dbt --target dev
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/dagster_pipeline.py", line 59, in run_tests
+    run_cmd(f"dbt test --profiles-dir /opt/dagster/app/dbt --target dev", cwd=DBT_PROJECT_DIR)
+  File "/opt/dagster/app/dagster_pipeline.py", line 20, in run_cmd
+    raise Exception(f"Command failed: {cmd}")
+

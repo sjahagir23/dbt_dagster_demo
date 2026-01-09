@@ -1,0 +1,7 @@
+Running dbt seed...
+
+Usage: dbt seed [OPTIONS]
+Try 'dbt seed -h' for help.
+
+Error: Invalid value for '--profiles-dir': Path './profiles' does not exist.
+

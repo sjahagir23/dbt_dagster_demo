@@ -1,0 +1,43 @@
+Running dbt seed...
+[0m06:18:53  Running with dbt=1.10.18
+[0m06:18:59  Registered adapter: databricks=1.11.0
+[0m06:19:00  Unable to do partial parsing because of a version mismatch
+[0m06:19:05  USING CUSTOM SCHEMA MACRO
+[0m06:19:05  USING CUSTOM SCHEMA MACRO
+[0m06:19:05  USING CUSTOM SCHEMA MACRO
+[0m06:19:05  USING CUSTOM SCHEMA MACRO
+[0m06:19:05  USING CUSTOM SCHEMA MACRO
+[0m06:19:05  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  USING CUSTOM SCHEMA MACRO
+[0m06:19:07  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_pipeline.intermediate
+[0m06:19:08  Found 4 models, 2 seeds, 9 data tests, 2 sources, 711 macros, 3 unit tests
+[0m06:19:08  
+[0m06:19:08  Concurrency: 1 threads (target='dev')
+[0m06:19:08  
+[0m06:19:33  1 of 2 START seed file raw.accounts ............................................ [RUN]
+[0m06:19:33  [[33mWARNING[0m]: Use revamped materializations based on separating create and insert.  This allows more performant column comments, as well as new column features.
+You may opt into the new behavior sooner by setting `flags.use_materialization_v2` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m06:19:33  [[33mWARNING[0m]: Use managed Iceberg tables when table_format is iceberg. When this flag is disabled, UniForm is used instead.
+You may opt into the new behavior sooner by setting `flags.use_managed_iceberg` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m06:19:46  1 of 2 OK loaded seed file raw.accounts ........................................ [[32mCREATE 7[0m in 12.88s]
+[0m06:19:46  2 of 2 START seed file raw.customers ........................................... [RUN]
+[0m06:19:52  2 of 2 OK loaded seed file raw.customers ....................................... [[32mCREATE 6[0m in 6.14s]
+[0m06:19:52  
+[0m06:19:52  Finished running 2 seeds in 0 hours 0 minutes and 44.26 seconds (44.26s).
+[0m06:19:52  
+[0m06:19:52  [32mCompleted successfully[0m
+[0m06:19:52  
+[0m06:19:53  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+

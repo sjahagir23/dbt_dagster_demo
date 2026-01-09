@@ -1,0 +1,6 @@
+2026-01-08 06:36:31 +0000 - dagster - DEBUG - banking_pipeline - 8be46b77-a317-4e79-bf24-42df1a698429 - 2089 - LOGS_CAPTURED - Started capturing logs in process (pid: 2089).
+2026-01-08 06:36:31 +0000 - dagster - DEBUG - banking_pipeline - 8be46b77-a317-4e79-bf24-42df1a698429 - 2089 - run_models - STEP_START - Started execution of step "run_models".
+2026-01-08 06:37:29 +0000 - dagster - DEBUG - banking_pipeline - 8be46b77-a317-4e79-bf24-42df1a698429 - 2089 - run_models - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-01-08 06:37:29 +0000 - dagster - DEBUG - banking_pipeline - 8be46b77-a317-4e79-bf24-42df1a698429 - run_models - Writing file at: /opt/dagster/dagster_home/storage/8be46b77-a317-4e79-bf24-42df1a698429/run_models/result using PickledObjectFilesystemIOManager...
+2026-01-08 06:37:29 +0000 - dagster - DEBUG - banking_pipeline - 8be46b77-a317-4e79-bf24-42df1a698429 - 2089 - run_models - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-01-08 06:37:29 +0000 - dagster - DEBUG - banking_pipeline - 8be46b77-a317-4e79-bf24-42df1a698429 - 2089 - run_models - STEP_SUCCESS - Finished execution of step "run_models" in 57.53s.

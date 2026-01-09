@@ -1,0 +1,12 @@
+dagster
+dagster-webserver
+dagster-dbt
+dbt-core==1.10.18
+dbt-databricks==1.11.0
+pandas
+databricks-cli
+pyspark==3.5.0
+dagit
+
+
+

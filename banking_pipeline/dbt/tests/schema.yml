@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_accounts
+    columns:
+      - name: account_id
+        tests:
+          - not_null
+          - unique
+      - name: balance
+        tests:
+          - not_null
+
+  - name: account_interest_summary
+    columns:
+      - name: interest_rate
+        tests:
+          - not_null
+      - name: new_balance
+        tests:
+          - not_null

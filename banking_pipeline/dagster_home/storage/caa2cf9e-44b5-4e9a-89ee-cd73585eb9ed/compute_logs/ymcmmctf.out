@@ -1,0 +1,43 @@
+STDOUT:
+ [0m23:58:30  Running with dbt=1.10.18
+[0m23:58:32  Registered adapter: databricks=1.11.0
+[0m23:58:33  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_pipeline.intermediate
+[0m23:58:33  Found 4 models, 2 seeds, 9 data tests, 2 sources, 711 macros, 3 unit tests
+[0m23:58:33  
+[0m23:58:33  Concurrency: 1 threads (target='dev')
+[0m23:58:33  
+[0m23:58:37  1 of 12 START test not_null_account_interest_summary_interest_rate ............. [RUN]
+[0m23:58:39  1 of 12 PASS not_null_account_interest_summary_interest_rate ................... [[32mPASS[0m in 1.14s]
+[0m23:58:39  2 of 12 START test not_null_account_interest_summary_new_balance ............... [RUN]
+[0m23:58:40  2 of 12 PASS not_null_account_interest_summary_new_balance ..................... [[32mPASS[0m in 1.20s]
+[0m23:58:40  3 of 12 START test not_null_stg_accounts_account_id ............................ [RUN]
+[0m23:58:41  3 of 12 PASS not_null_stg_accounts_account_id .................................. [[32mPASS[0m in 1.35s]
+[0m23:58:41  4 of 12 START test not_null_stg_accounts_balance ............................... [RUN]
+[0m23:58:42  4 of 12 PASS not_null_stg_accounts_balance ..................................... [[32mPASS[0m in 1.13s]
+[0m23:58:42  5 of 12 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m23:58:43  5 of 12 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 1.13s]
+[0m23:58:43  6 of 12 START test source_not_null_raw_accounts_AccountID ...................... [RUN]
+[0m23:58:44  6 of 12 PASS source_not_null_raw_accounts_AccountID ............................ [[32mPASS[0m in 1.07s]
+[0m23:58:44  7 of 12 START test source_not_null_raw_customers_CustomerID .................... [RUN]
+[0m23:58:46  7 of 12 PASS source_not_null_raw_customers_CustomerID .......................... [[32mPASS[0m in 1.08s]
+[0m23:58:46  8 of 12 START test unique_stg_accounts_account_id .............................. [RUN]
+[0m23:58:47  8 of 12 PASS unique_stg_accounts_account_id .................................... [[32mPASS[0m in 1.11s]
+[0m23:58:47  9 of 12 START test unique_stg_customers_customer_id ............................ [RUN]
+[0m23:58:48  9 of 12 PASS unique_stg_customers_customer_id .................................. [[32mPASS[0m in 1.18s]
+[0m23:58:48  10 of 12 START unit_test account_interest_summary::interest_rate_with_loan_mid_balance  [RUN]
+[0m23:58:50  10 of 12 PASS account_interest_summary::interest_rate_with_loan_mid_balance .... [[32mPASS[0m in 2.40s]
+[0m23:58:50  11 of 12 START unit_test account_interest_summary::interest_rate_without_loan_low_balance  [RUN]
+[0m23:58:53  11 of 12 PASS account_interest_summary::interest_rate_without_loan_low_balance . [[32mPASS[0m in 2.23s]
+[0m23:58:53  12 of 12 START unit_test account_interest_summary::non_savings_account_filtered_out  [RUN]
+[0m23:58:55  12 of 12 PASS account_interest_summary::non_savings_account_filtered_out ....... [[32mPASS[0m in 2.44s]
+[0m23:58:55  
+[0m23:58:55  Finished running 9 data tests, 3 unit tests in 0 hours 0 minutes and 22.05 seconds (22.05s).
+[0m23:58:55  
+[0m23:58:55  [32mCompleted successfully[0m
+[0m23:58:55  
+[0m23:58:55  Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+
+STDERR:
+ 

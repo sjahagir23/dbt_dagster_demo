@@ -1,0 +1,14 @@
+
+--- STDOUT ---
+[0m07:26:19  Running with dbt=1.10.18
+[0m07:26:24  Registered adapter: databricks=1.11.0
+[0m07:26:26  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_pipeline.intermediate
+[0m07:26:26  Found 4 models, 2 seeds, 9 data tests, 2 sources, 711 macros, 3 unit tests
+[0m07:26:59  Encountered an error while running operation: Compilation Error
+  'write_csv' is undefined
+
+
+--- STDERR ---
+

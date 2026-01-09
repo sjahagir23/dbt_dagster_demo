@@ -1,0 +1,29 @@
+2026-01-07 04:36:47 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15229 - LOGS_CAPTURED - Started capturing logs in process (pid: 15229).
+2026-01-07 04:36:47 +0000 - dagster - DEBUG - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15229 - export_csv - STEP_START - Started execution of step "export_csv".
+2026-01-07 04:36:48 +0000 - dagster - INFO - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - export_csv - Exporting CSV...
+2026-01-07 04:36:55 +0000 - dagster - INFO - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - export_csv - [0m04:36:54  Running with dbt=1.10.18
+[0m04:36:54  Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /app/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+
+2026-01-07 04:36:55 +0000 - dagster - ERROR - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - export_csv
+2026-01-07 04:36:55 +0000 - dagster - ERROR - banking_pipeline - d955e9e4-1f52-4112-a1eb-60f7e4e30563 - 15229 - export_csv - STEP_FAILURE - Execution of step "export_csv" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "export_csv"::
+
+Exception: CSV export failed
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/app/dagster_pipeline.py", line 46, in export_csv
+    raise Exception("CSV export failed")
+

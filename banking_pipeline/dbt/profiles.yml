@@ -1,0 +1,12 @@
+banking_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      method: token
+
+      host: dbc-40d5c66b-e30f.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/07c31e78771ea136
+      token: dapi407dbf225a07f89de27d43a9e0cf63cd
+      catalog: workspace
+      schema: raw                

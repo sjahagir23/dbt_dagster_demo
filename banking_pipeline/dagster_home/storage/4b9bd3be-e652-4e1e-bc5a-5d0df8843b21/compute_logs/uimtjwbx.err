@@ -1,0 +1,77 @@
+2026-01-08 23:08:27 +0000 - dagster - DEBUG - banking_pipeline - 4b9bd3be-e652-4e1e-bc5a-5d0df8843b21 - 1498 - LOGS_CAPTURED - Started capturing logs in process (pid: 1498).
+2026-01-08 23:08:27 +0000 - dagster - DEBUG - banking_pipeline - 4b9bd3be-e652-4e1e-bc5a-5d0df8843b21 - 1498 - dbt_test - STEP_START - Started execution of step "dbt_test".
+2026-01-08 23:08:59 +0000 - dagster - ERROR - banking_pipeline - 4b9bd3be-e652-4e1e-bc5a-5d0df8843b21 - 1498 - dbt_test - STEP_FAILURE - Execution of step "dbt_test" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_test"::
+
+RuntimeError: Command failed: dbt test --project-dir /opt/dagster/app/dbt --profiles-dir /opt/dagster/app/dbt --target dev
+STDOUT:
+[0m23:08:29  Running with dbt=1.10.18
+[0m23:08:31  Registered adapter: databricks=1.11.0
+[0m23:08:32  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_pipeline.intermediate
+[0m23:08:32  Found 4 models, 2 seeds, 9 data tests, 2 sources, 711 macros, 3 unit tests
+[0m23:08:32  
+[0m23:08:32  Concurrency: 1 threads (target='dev')
+[0m23:08:32  
+[0m23:08:36  1 of 12 START test not_null_account_interest_summary_interest_rate ............. [RUN]
+[0m23:08:38  1 of 12 PASS not_null_account_interest_summary_interest_rate ................... [[32mPASS[0m in 1.82s]
+[0m23:08:38  2 of 12 START test not_null_account_interest_summary_new_balance ............... [RUN]
+[0m23:08:39  2 of 12 PASS not_null_account_interest_summary_new_balance ..................... [[32mPASS[0m in 1.27s]
+[0m23:08:39  3 of 12 START test not_null_stg_accounts_account_id ............................ [RUN]
+[0m23:08:41  3 of 12 PASS not_null_stg_accounts_account_id .................................. [[32mPASS[0m in 1.45s]
+[0m23:08:41  4 of 12 START test not_null_stg_accounts_balance ............................... [RUN]
+[0m23:08:42  4 of 12 PASS not_null_stg_accounts_balance ..................................... [[32mPASS[0m in 1.21s]
+[0m23:08:42  5 of 12 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m23:08:43  5 of 12 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 1.19s]
+[0m23:08:43  6 of 12 START test source_not_null_raw_accounts_AccountID ...................... [RUN]
+[0m23:08:44  6 of 12 PASS source_not_null_raw_accounts_AccountID ............................ [[32mPASS[0m in 1.26s]
+[0m23:08:44  7 of 12 START test source_not_null_raw_customers_CustomerID .................... [RUN]
+[0m23:08:46  7 of 12 PASS source_not_null_raw_customers_CustomerID .......................... [[32mPASS[0m in 1.28s]
+[0m23:08:46  8 of 12 START test unique_stg_accounts_account_id .............................. [RUN]
+[0m23:08:47  8 of 12 PASS unique_stg_accounts_account_id .................................... [[32mPASS[0m in 1.42s]
+[0m23:08:47  9 of 12 START test unique_stg_customers_customer_id ............................ [RUN]
+[0m23:08:48  9 of 12 PASS unique_stg_customers_customer_id .................................. [[32mPASS[0m in 1.31s]
+[0m23:08:49  10 of 12 START unit_test account_interest_summary::interest_rate_with_loan_mid_balance  [RUN]
+[0m23:08:51  10 of 12 PASS account_interest_summary::interest_rate_with_loan_mid_balance .... [[32mPASS[0m in 2.96s]
+[0m23:08:51  11 of 12 START unit_test account_interest_summary::interest_rate_without_loan_low_balance  [RUN]
+[0m23:08:54  11 of 12 PASS account_interest_summary::interest_rate_without_loan_low_balance . [[32mPASS[0m in 2.81s]
+[0m23:08:54  12 of 12 START unit_test account_interest_summary::non_savings_account_filtered_out  [RUN]
+[0m23:08:57  12 of 12 FAIL 1 account_interest_summary::non_savings_account_filtered_out ..... [[31mFAIL 1[0m in 3.11s]
+[0m23:08:57  
+[0m23:08:57  Finished running 9 data tests, 3 unit tests in 0 hours 0 minutes and 24.98 seconds (24.98s).
+[0m23:08:58  
+[0m23:08:58  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m23:08:58  
+[0m23:08:58  [31mFailure in unit_test non_savings_account_filtered_out (tests/unit/test_interest_calculation.yml)[0m
+[0m23:08:58    
+
+[32mactual[0m differs from [31mexpected[0m:
+
+[0;1m@@[0m [33m,[0m[0;1mcustomer_id[0m[33m,[0m[0;1maccount_id[0m[33m,[0m[0;1moriginal_balance[0m[33m,[0m[0;1minterest_rate[0m[33m,[0m[0;1mannual_interest_amount[0m[33m,[0m[0;1mnew_balance[0m
+[32;1m+++[0m[33m,[0m[32;1m203[0m        [33m,[0m[32;1mUT003[0m     [33m,[0m[32;1mDecimal('20000.00')[0m        [33m,[0m[32;1mDecimal('0.020')[0m        [33m,[0m[32;1mDecimal('400.00000')[0m             [33m,[0m[32;1mDecimal('20400.00000')[0m
+
+
+[0m23:08:58  
+[0m23:08:58    compiled code at target/compiled/banking_pipeline/tests/unit/test_interest_calculation.yml/tests/unit/non_savings_account_filtered_out.sql
+[0m23:08:58  
+[0m23:08:58  Done. PASS=11 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=12
+
+STDERR:
+
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/dagster_pipeline.py", line 62, in dbt_test
+    run_cmd(
+  File "/opt/dagster/app/dagster_pipeline.py", line 26, in run_cmd
+    raise RuntimeError(
+

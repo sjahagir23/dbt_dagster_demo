@@ -1,0 +1,7 @@
+2026-01-08 22:54:42 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 600 - LOGS_CAPTURED - Started capturing logs in process (pid: 600).
+2026-01-08 22:54:42 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 600 - dbt_seed - STEP_START - Started execution of step "dbt_seed".
+2026-01-08 22:55:35 +0000 - dagster - INFO - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - dbt_seed - dbt seed completed ✅
+2026-01-08 22:55:35 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 600 - dbt_seed - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-01-08 22:55:35 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - dbt_seed - Writing file at: /opt/dagster/app/dagster_home/storage/aa9598b4-0946-46d4-a5ba-422b910bf188/dbt_seed/result using PickledObjectFilesystemIOManager...
+2026-01-08 22:55:35 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 600 - dbt_seed - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-01-08 22:55:35 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 600 - dbt_seed - STEP_SUCCESS - Finished execution of step "dbt_seed" in 52.72s.

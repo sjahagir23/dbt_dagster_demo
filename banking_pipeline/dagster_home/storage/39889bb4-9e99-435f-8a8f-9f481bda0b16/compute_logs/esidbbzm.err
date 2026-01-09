@@ -1,0 +1,4 @@
+2026-01-08 22:09:38 +0000 - dagster - DEBUG - banking_pipeline - 39889bb4-9e99-435f-8a8f-9f481bda0b16 - 82 - LOGS_CAPTURED - Started capturing logs in process (pid: 82).
+2026-01-08 22:09:38 +0000 - dagster - DEBUG - banking_pipeline - 39889bb4-9e99-435f-8a8f-9f481bda0b16 - 82 - seed_data - STEP_START - Started execution of step "seed_data".
+2026-01-08 22:10:31 +0000 - dagster - DEBUG - banking_pipeline - 39889bb4-9e99-435f-8a8f-9f481bda0b16 - 82 - seed_data - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+2026-01-08 22:10:31 +0000 - dagster - DEBUG - banking_pipeline - 39889bb4-9e99-435f-8a8f-9f481bda0b16 - 82 - seed_data - STEP_SUCCESS - Finished execution of step "seed_data" in 53.46s.

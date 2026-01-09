@@ -1,0 +1,9 @@
+2026-01-08 22:54:42 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 613 - LOGS_CAPTURED - Started capturing logs in process (pid: 613).
+2026-01-08 22:54:42 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 613 - export_locally_via_sql_connector - STEP_START - Started execution of step "export_locally_via_sql_connector".
+/opt/dagster/app/dagster_pipeline.py:93: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(
+2026-01-08 22:55:13 +0000 - dagster - INFO - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - export_locally_via_sql_connector - Exported mart to local CSV: /opt/dagster/app/dbt/target/account_interest_summary.csv ✅
+2026-01-08 22:55:13 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 613 - export_locally_via_sql_connector - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-01-08 22:55:13 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - export_locally_via_sql_connector - Writing file at: /opt/dagster/app/dagster_home/storage/aa9598b4-0946-46d4-a5ba-422b910bf188/export_locally_via_sql_connector/result using PickledObjectFilesystemIOManager...
+2026-01-08 22:55:13 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 613 - export_locally_via_sql_connector - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-01-08 22:55:13 +0000 - dagster - DEBUG - banking_pipeline - aa9598b4-0946-46d4-a5ba-422b910bf188 - 613 - export_locally_via_sql_connector - STEP_SUCCESS - Finished execution of step "export_locally_via_sql_connector" in 30.96s.

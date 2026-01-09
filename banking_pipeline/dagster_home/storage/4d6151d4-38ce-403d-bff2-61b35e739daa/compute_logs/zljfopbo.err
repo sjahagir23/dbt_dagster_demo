@@ -1,0 +1,4 @@
+2026-01-08 22:17:11 +0000 - dagster - DEBUG - banking_pipeline - 4d6151d4-38ce-403d-bff2-61b35e739daa - 954 - LOGS_CAPTURED - Started capturing logs in process (pid: 954).
+2026-01-08 22:17:11 +0000 - dagster - DEBUG - banking_pipeline - 4d6151d4-38ce-403d-bff2-61b35e739daa - 954 - run_models - STEP_START - Started execution of step "run_models".
+2026-01-08 22:17:32 +0000 - dagster - DEBUG - banking_pipeline - 4d6151d4-38ce-403d-bff2-61b35e739daa - 954 - run_models - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+2026-01-08 22:17:33 +0000 - dagster - DEBUG - banking_pipeline - 4d6151d4-38ce-403d-bff2-61b35e739daa - 954 - run_models - STEP_SUCCESS - Finished execution of step "run_models" in 21.46s.

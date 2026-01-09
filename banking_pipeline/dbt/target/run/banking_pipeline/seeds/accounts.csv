@@ -1,0 +1,22 @@
+
+    
+    
+    
+    create or replace table `workspace`.`raw`.`accounts` (`AccountID` string ,`CustomerID` bigint ,`Balance` bigint ,`AccountType` string )
+    
+    using delta
+  
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `workspace`.`raw`.`accounts` values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      
+
+;
+  

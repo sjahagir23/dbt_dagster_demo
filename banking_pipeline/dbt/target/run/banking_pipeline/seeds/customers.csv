@@ -1,0 +1,22 @@
+
+    
+    
+    
+    create or replace table `workspace`.`raw`.`customers` (`CustomerID` bigint ,`Name` string ,`HasLoan` string )
+    
+    using delta
+  
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `workspace`.`raw`.`customers` values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      
+
+;
+  

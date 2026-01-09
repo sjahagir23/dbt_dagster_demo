@@ -1,0 +1,56 @@
+version: 2
+
+unit_tests:
+  - name: interest_rate_with_loan_mid_balance
+    model: account_interest_summary
+    given:
+      - input: ref('int_customer_accounts')
+        rows:
+          - customer_id: 201
+            account_id: "UT001"
+            balance: 15000
+            has_loan: true
+            account_type: "savings"
+
+    expect:
+      rows:
+        - customer_id: 201
+          account_id: "UT001"
+          original_balance: 15000
+          interest_rate: 0.02   # 1.5% + 0.5% bonus
+          annual_interest_amount: 300
+          new_balance: 15300
+
+  - name: interest_rate_without_loan_low_balance
+    model: account_interest_summary
+    given:
+      - input: ref('int_customer_accounts')
+        rows:
+          - customer_id: 202
+            account_id: "UT002"
+            balance: 5000
+            has_loan: false
+            account_type: "savings"
+
+    expect:
+      rows:
+        - customer_id: 202
+          account_id: "UT002"
+          original_balance: 5000
+          interest_rate: 0.01
+          annual_interest_amount: 50
+          new_balance: 5050
+
+  - name: non_savings_account_filtered_out
+    model: account_interest_summary
+    given:
+      - input: ref('int_customer_accounts')
+        rows:
+          - customer_id: 203
+            account_id: "UT003"
+            balance: 20000
+            has_loan: true
+            account_type: "checking"
+
+    expect:
+      rows: []

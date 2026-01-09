@@ -1,0 +1,23 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Dagster logs (optional)
+logs/
+dagster_home/
+
+# dbt compiled files (optional)
+dbt/target/
+dbt/.dbt/
+
+# Git and IDE files
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

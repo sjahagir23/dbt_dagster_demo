@@ -1,0 +1,28 @@
+2026-01-08 05:59:15 +0000 - dagster - DEBUG - banking_pipeline - 1104d1d7-53f1-4eea-a406-babc549a3f43 - 3365 - LOGS_CAPTURED - Started capturing logs in process (pid: 3365).
+2026-01-08 05:59:16 +0000 - dagster - DEBUG - banking_pipeline - 1104d1d7-53f1-4eea-a406-babc549a3f43 - 3365 - export_mart_to_csv - STEP_START - Started execution of step "export_mart_to_csv".
+2026-01-08 05:59:16 +0000 - dagster - ERROR - banking_pipeline - 1104d1d7-53f1-4eea-a406-babc549a3f43 - 3365 - export_mart_to_csv - STEP_FAILURE - Execution of step "export_mart_to_csv" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "export_mart_to_csv"::
+
+FileNotFoundError: [Errno 2] No such file or directory: '/app/dbt'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/dagster_pipeline.py", line 45, in export_mart_to_csv
+    run_cmd(
+  File "/opt/dagster/app/dagster_pipeline.py", line 16, in run_cmd
+    result = subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True)
+  File "/usr/local/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/local/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/local/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+

@@ -1,0 +1,7 @@
+Running dbt models...
+
+Usage: dbt run [OPTIONS]
+Try 'dbt run -h' for help.
+
+Error: Invalid value for '--profiles-dir': Path './profiles' does not exist.
+

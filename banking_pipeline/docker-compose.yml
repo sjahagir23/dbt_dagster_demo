@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  dagit:
+    build: .
+    container_name: banking_dagit
+    command: dagit -h 0.0.0.0 -p 3000 -f /opt/dagster/app/dagster_pipeline.py
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./dbt:/opt/dagster/app/dbt
+      - ./data:/opt/dagster/app/data
+      - ./target:/opt/dagster/app/target
+      - ./logs:/opt/dagster/app/logs
+      - ./dagster_home:/opt/dagster/app/dagster_home
+      - ./dagster_pipeline.py:/opt/dagster/app/dagster_pipeline.py
+    environment:
+      - DAGSTER_HOME=/opt/dagster/app/dagster_home
+
+  dagster-daemon:
+    build: .
+    container_name: banking_dagster_daemon
+    command: dagster-daemon run
+    volumes:
+      - ./dbt:/opt/dagster/app/dbt
+      - ./data:/opt/dagster/app/data
+      - ./target:/opt/dagster/app/target
+      - ./logs:/opt/dagster/app/logs
+      - ./dagster_home:/opt/dagster/app/dagster_home
+      - ./dagster_pipeline.py:/opt/dagster/app/dagster_pipeline.py
+    environment:
+      - DAGSTER_HOME=/opt/dagster/app/dagster_home
+

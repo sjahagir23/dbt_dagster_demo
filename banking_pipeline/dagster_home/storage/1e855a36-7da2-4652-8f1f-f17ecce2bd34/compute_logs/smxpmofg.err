@@ -1,0 +1,28 @@
+2026-01-08 05:26:16 +0000 - dagster - DEBUG - banking_pipeline - 1e855a36-7da2-4652-8f1f-f17ecce2bd34 - 17110 - LOGS_CAPTURED - Started capturing logs in process (pid: 17110).
+2026-01-08 05:26:16 +0000 - dagster - DEBUG - banking_pipeline - 1e855a36-7da2-4652-8f1f-f17ecce2bd34 - 17110 - run_models - STEP_START - Started execution of step "run_models".
+2026-01-08 05:26:17 +0000 - dagster - ERROR - banking_pipeline - 1e855a36-7da2-4652-8f1f-f17ecce2bd34 - 17110 - run_models - STEP_FAILURE - Execution of step "run_models" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_models"::
+
+FileNotFoundError: [Errno 2] No such file or directory: '/app/dbt'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/dagster_pipeline.py", line 35, in run_models
+    run_cmd(f"dbt run --full-refresh --profiles-dir ./profiles --target dev", cwd=DBT_PROJECT_DIR)
+  File "/opt/dagster/app/dagster_pipeline.py", line 16, in run_cmd
+    result = subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True)
+  File "/usr/local/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/local/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/local/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+

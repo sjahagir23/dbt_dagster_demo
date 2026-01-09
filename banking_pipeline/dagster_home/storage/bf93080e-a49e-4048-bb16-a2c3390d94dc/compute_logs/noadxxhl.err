@@ -1,0 +1,6 @@
+2026-01-08 07:26:15 +0000 - dagster - DEBUG - banking_pipeline - bf93080e-a49e-4048-bb16-a2c3390d94dc - 4013 - LOGS_CAPTURED - Started capturing logs in process (pid: 4013).
+2026-01-08 07:26:15 +0000 - dagster - DEBUG - banking_pipeline - bf93080e-a49e-4048-bb16-a2c3390d94dc - 4013 - seed_data - STEP_START - Started execution of step "seed_data".
+2026-01-08 07:27:21 +0000 - dagster - DEBUG - banking_pipeline - bf93080e-a49e-4048-bb16-a2c3390d94dc - 4013 - seed_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-01-08 07:27:21 +0000 - dagster - DEBUG - banking_pipeline - bf93080e-a49e-4048-bb16-a2c3390d94dc - seed_data - Writing file at: /opt/dagster/dagster_home/storage/bf93080e-a49e-4048-bb16-a2c3390d94dc/seed_data/result using PickledObjectFilesystemIOManager...
+2026-01-08 07:27:21 +0000 - dagster - DEBUG - banking_pipeline - bf93080e-a49e-4048-bb16-a2c3390d94dc - 4013 - seed_data - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-01-08 07:27:21 +0000 - dagster - DEBUG - banking_pipeline - bf93080e-a49e-4048-bb16-a2c3390d94dc - 4013 - seed_data - STEP_SUCCESS - Finished execution of step "seed_data" in 1m6s.
